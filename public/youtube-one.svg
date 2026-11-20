@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720"><rect width="1280" height="720" fill="#111"/><path d="M0 0H1280V720H0Z" fill="#d85a50" fill-opacity=".12"/><text x="80" y="120" fill="#d85a50" font-family="Arial" font-size="25" letter-spacing="10">YOUTUBE / LONG FORM</text><text x="80" y="390" fill="#f5f5f0" font-family="Arial" font-size="110" font-weight="700">PROJECT 01</text><text x="80" y="490" fill="#aaa" font-family="Arial" font-size="30" letter-spacing="8">TITLE TO BE CONFIRMED</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200">
+<defs><radialGradient id="glow" cx="82%" cy="18%" r="75%"><stop offset="0" stop-color="#d85a50" stop-opacity=".28"/><stop offset="1" stop-color="#111" stop-opacity="0"/></radialGradient></defs>
+<rect width="960" height="1200" fill="#10100f"/><rect width="960" height="1200" fill="url(#glow)"/>
+<path d="M70 210H890M70 1000H890" stroke="#ffffff" stroke-opacity=".14"/>
+<text x="76" y="155" fill="#d85a50" font-family="Arial,sans-serif" font-size="22" letter-spacing="9">YOUTUBE / LONG FORM</text>
+<text x="70" y="570" fill="#f5f5f0" font-family="Arial,sans-serif" font-size="105" font-weight="700" letter-spacing="-6">PROJECT</text>
+<text x="70" y="690" fill="#d85a50" font-family="Arial,sans-serif" font-size="150" font-weight="700" letter-spacing="-8">01</text>
+<text x="76" y="785" fill="#aaa" font-family="Arial,sans-serif" font-size="22" letter-spacing="6">TITLE TO BE CONFIRMED</text>
+<text x="76" y="1060" fill="#777" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">KARAN VERMA — VIDEO EDITOR</text>
+</svg>
