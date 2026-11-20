@@ -15,7 +15,7 @@ const projectQuery=`*[_type == "project" && published == true] | order(sortOrder
 }`
 
 function getYouTubeId(url:string){
- const match=url.match(/(?:youtube\\.com\\/(?:embed|shorts|live)\\/|youtu\\.be\\/)([A-Za-z0-9_-]{11})/)
+ const match=url.match(/(?:embed\/|youtu\.be\/)([A-Za-z0-9_-]{11})/)
  return match?.[1]||null
 }
 function formatViews(value:number){
