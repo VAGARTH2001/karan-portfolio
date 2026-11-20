@@ -1,7 +1,7 @@
 # Sanity Studio
 
-The Studio is a separate authenticated Sanity application. Create a Sanity project, set SANITY_STUDIO_PROJECT_ID and SANITY_STUDIO_DATASET in sanity/.env, install dependencies from this folder, then run npm run dev.
+The Studio is a separate authenticated Sanity application. Create a Sanity project, copy this file to .env, set the project ID and dataset, then run npm install and npm run dev from this folder.
 
 Only invite Karan's account as an editor. Never put write tokens or admin credentials in the public website. Deploy the Studio separately from the Vite frontend.
 
-The public frontend currently starts with bundled project placeholders. The Sanity project schemas and read-only client foundation are included; connect and verify the dataset before launch.
+The public frontend reads published Project documents using the public dataset. The remaining profile, statistics, experience and testimonial sections currently use the supplied starter copy; their schemas are available for the next CMS wiring step.
