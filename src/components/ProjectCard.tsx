@@ -10,7 +10,7 @@ export default function ProjectCard({project,onOpen,index}:{project:Project;onOp
  const playPreview=()=>{
   const video=previewRef.current
   if(!video||!previewable)return
-  if(!video.src)video.src=video.dataset.src||''
+  if(!video.getAttribute('src'))video.src=video.dataset.src||''
   if(!video.src)return
   video.play().then(()=>setPreviewing(true)).catch(()=>setPreviewing(false))
  }
