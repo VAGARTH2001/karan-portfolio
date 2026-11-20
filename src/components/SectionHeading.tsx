@@ -1,0 +1,1 @@
+export default function SectionHeading({kicker,title,aside}:{kicker:string;title:string;aside?:string}){return <div className="section-heading"><div><p className="eyebrow">{kicker}</p><h2>{title}</h2></div>{aside&&<p className="section-aside">{aside}</p>}</div>}
