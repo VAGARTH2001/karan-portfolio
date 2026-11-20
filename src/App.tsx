@@ -15,8 +15,15 @@ const projectQuery=`*[_type == "project" && published == true] | order(sortOrder
 }`
 
 function getYouTubeId(url:string){
- const match=url.match(/(?:embed\/|youtu\.be\/)([A-Za-z0-9_-]{11})/)
- return match?.[1]||null
+ try{
+  const parsed=new URL(url)
+  const shortId=parsed.hostname==='youtu.be'?parsed.pathname.split('/').filter(Boolean)[0]:null
+  const embedParts=parsed.pathname.split('/').filter(Boolean)
+  const embedIndex=embedParts.findIndex(part=>part==='embed'||part==='shorts'||part==='live')
+  const pathId=embedIndex>=0?embedParts[embedIndex+1]:null
+  const id=parsed.searchParams.get('v')||shortId||pathId
+  return id&&/^[A-Za-z0-9_-]{11}$/.test(id)?id:null
+ }catch{return null}
 }
 function formatViews(value:number){
  return new Intl.NumberFormat('en',{notation:value>=100000?'compact':'standard',maximumFractionDigits:1}).format(value)
