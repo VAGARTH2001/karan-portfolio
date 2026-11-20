@@ -7,13 +7,25 @@ import ProjectCard from './components/ProjectCard'
 import VideoModal from './components/VideoModal'
 import SectionHeading from './components/SectionHeading'
 
-const stats=[{value:'500M+',label:'Combined views',note:'Across published content'},{value:'7M+',label:'Views on one reel',note:'Organic performance'},{value:'0 → 10K',label:'Followers in 90 days',note:'Audience growth claim'},{value:'90+',label:'Videos per month',note:'High-volume production'}]
 const clients=['PHYSICSWALLAH','PHICKU','ALKAPURI','ISHAN SHARMA','LUXMI SHANKER']
 const projectQuery=`*[_type == "project" && published == true] | order(sortOrder asc) {
   "id": _id, title, category, description, client,
   "poster": thumbnail.asset->url, "video": videoUrl, "aspect": aspectRatio, featured,
   platform, "publishedUrl": publishedPostUrl, viewCount, viewsUpdatedAt, metricSource, showInResults
 }`
+
+function getYouTubeId(url:string){
+ const match=url.match(/(?:youtube\\.com\\/(?:embed|shorts|live)\\/|youtu\\.be\\/)([A-Za-z0-9_-]{11})/)
+ return match?.[1]||null
+}
+function formatViews(value:number){
+ return new Intl.NumberFormat('en',{notation:value>=100000?'compact':'standard',maximumFractionDigits:1}).format(value)
+}
+function formatUpdated(value?:string){
+ if(!value)return 'Not yet checked'
+ const date=new Date(value)
+ return Number.isNaN(date.getTime())?'Not yet checked':date.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})
+}
 
 export default function App(){
  const [category,setCategory]=useState('All Work')
@@ -40,7 +52,8 @@ export default function App(){
  const filtered=useMemo(()=>category==='All Work'?items:items.filter(p=>p.category===category),[category,items])
  const verifiedResults=useMemo(()=>items.filter(p=>p.showInResults&&typeof p.viewCount==='number'&&Number.isFinite(p.viewCount)).sort((a,b)=>(b.viewCount||0)-(a.viewCount||0)),[items])
  const totalTrackedViews=verifiedResults.reduce((sum,p)=>sum+(p.viewCount||0),0)
- const latestMetricsDate=verifiedResults.map(p=>p.viewsUpdatedAt).filter(Boolean).sort().at(-1)
+ const metricDates=verifiedResults.map(p=>p.viewsUpdatedAt).filter((value):value is string=>Boolean(value)).sort()
+ const latestMetricsDate=metricDates.length?metricDates[metricDates.length-1]:undefined
  const navigateProject=(direction:number)=>{if(!active||!items.length)return;const current=items.findIndex(p=>p.id===active.id);const next=(current+direction+items.length)%items.length;setActive(items[next])}
  return <main>
   <header className="site-header"><a href="#top" className="wordmark" onClick={closeMenu}>KARAN<span>.</span></a><nav className={menuOpen?'nav-links open':'nav-links'}><a href="#work" onClick={()=>chooseCategory('Reels & Shorts')}>REELS</a><a href="#work" onClick={()=>chooseCategory('Brand & Promo')}>BRAND</a><a href="#work" onClick={()=>chooseCategory('Testimonials')}>TESTIMONIALS</a><a href="#work" onClick={()=>chooseCategory('YouTube')}>YOUTUBE</a><a href="#work" onClick={()=>chooseCategory('All Work')}>ALL WORK</a><a href="#results" onClick={closeMenu}>RESULTS</a><a href="#about" onClick={closeMenu}>ABOUT</a></nav><a className="header-cta" href="#contact" onClick={closeMenu}>CONTACT <ArrowUpRight size={15}/></a><button className="mobile-menu" onClick={()=>setMenuOpen(v=>!v)} aria-label="Toggle navigation">{menuOpen?<X/>:<Menu/>}</button></header>
