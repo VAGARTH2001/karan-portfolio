@@ -1,5 +1,5 @@
 import {useRef,useState} from 'react'
-import {ArrowUpRight,Play} from 'lucide-react'
+import {ArrowUpRight} from 'lucide-react'
 import type {Project} from '../data/projects'
 
 export default function ProjectCard({project,onOpen,index}:{project:Project;onOpen:(p:Project)=>void;index:number}){
@@ -20,31 +20,25 @@ export default function ProjectCard({project,onOpen,index}:{project:Project;onOp
   setPreviewing(false)
  }
 
- return <button
-  className={`project-card ${project.aspect==='landscape'?'landscape':''} ${previewing?'is-previewing':''}`}
+ return <button className={`project-card ${previewing?'is-previewing':''}`}
   onClick={()=>onOpen(project)}
-  onMouseEnter={playPreview}
-  onMouseLeave={stopPreview}
-  onFocus={playPreview}
+  onPointerEnter={event=>{if(event.pointerType!=='touch')playPreview()}}
+  onPointerLeave={stopPreview}
   onBlur={stopPreview}
-  aria-label={`Play ${project.title}`}
- >
-  <div className="project-image">
+  aria-label={`Watch ${project.title}`}>
+  <div className={`project-image ${project.aspect==='portrait'?'is-portrait':'is-landscape'}`}>
    <span className="poster-fallback" aria-hidden="true"><small>{project.category}</small><strong>{project.title}</strong><span>SELECTED WORK</span></span>
+   <img className="project-backdrop" src={project.poster} alt="" loading="lazy" onError={event=>{event.currentTarget.style.display='none'}}/>
    <img className="project-poster" src={project.poster} alt="" loading="lazy" onError={event=>{event.currentTarget.style.display='none'}}/>
    {previewable&&<video ref={previewRef} className="project-preview" data-src={project.video} poster={project.poster} muted loop playsInline preload="none" aria-hidden="true"/>}
-   <span className="project-index">0{index+1}</span>
-   <span className="play-button"><Play fill="currentColor" size={17}/></span>
-   <span className="project-open"><ArrowUpRight size={18}/></span>
+   <span className="project-index">SELECTED WORK <i>{String(index+1).padStart(2,'0')}</i></span>
+   <span className="project-pill">{previewable?'VIDEO PREVIEW':'FULL VIDEO'}</span>
    <span className="project-overlay">
     <span className="project-overlay-category">{project.category}</span>
     <strong>{project.title}</strong>
-    <span className="project-overlay-detail">{project.client}</span>
+    <span className="project-overlay-detail">{project.description}</span>
+    <span className="project-watch">WATCH THE WORK <ArrowUpRight size={15}/></span>
    </span>
-  </div>
-  <div className="project-meta">
-   <div><p className="eyebrow">{project.category}</p><h3>{project.title}</h3></div>
-   <span className="project-client">{project.client}</span>
   </div>
  </button>
 }
