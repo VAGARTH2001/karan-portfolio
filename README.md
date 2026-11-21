@@ -34,3 +34,10 @@ Confirm performance figures, experience/client names, testimonial wording, email
 
 ## Deploy
 Import this repository into Vercel. Use Vite, build command `npm run build`, output directory `dist`. Add `VITE_SANITY_PROJECT_ID` and `VITE_SANITY_DATASET` after configuring Sanity.
+
+
+## Updating Karan's contact details and content
+
+Contact destinations are centralised in `src/data/siteConfig.ts`. Update the WhatsApp number and message, email address, Instagram profile, or Topmate link there. The WhatsApp modal generates its QR locally in the browser; it does not call a paid QR service. `projectBookingUrl` is intentionally blank until Karan supplies a genuine project-call booking URL.
+
+The main site content is kept in `src/App.tsx` and project entries are in `src/data/projects.ts`. The Services and Why Work With Me copy can be edited directly in the corresponding section markup. For the client feedback carousel, add each original, permission-cleared feedback image as an optimised WebP file under `public/feedback/` and add its `person`, `path`, and accessible `label` to `src/components/FeedbackCarousel.tsx`. Keep the source review wording/artwork intact. The carousel currently includes the available original cards; add the remaining images when they are available in the deployable asset folder. Do not add private WhatsApp screenshots unless personal information is obscured and permission is confirmed.

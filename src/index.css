@@ -695,3 +695,109 @@ html,body,#root,body{background:#f8f7f2;color:#11120f}
 .feedback-slide-caption{display:none}
 @media(max-width:850px){.feedback-card{min-height:340px;padding:23px 21px 18px}.feedback-quote{font-size:15px}}
 @media(max-width:600px){.feedback-card{min-height:330px;padding:22px 19px 18px;border-radius:17px}.feedback-quote{font-size:14px;line-height:1.5}.feedback-card-footer strong{font-size:11px}}
+
+
+/* Contact, Services and Why Work sections — warm light / green-accent system */
+.header-contact-button{font:500 11px 'DM Sans';letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.experience-section{background:#f0eee7;color:#11120f}
+.experience-intro,.services-heading,.why-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}
+.experience-intro h2,.services-heading h2,.why-heading h2{font:700 clamp(39px,5.3vw,70px)/.96 'Space Grotesk';letter-spacing:-.075em;margin:0;color:#11120f}
+.experience-intro h2 em,.services-heading h2 em,.why-heading h2 em{font-style:normal;color:#087d40}
+.experience-intro>p,.services-heading>p,.why-heading>p{max-width:360px;margin:0 0 5px;color:#68675f;font-size:13px;line-height:1.75}
+.experience-panels{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.experience-panel{min-height:265px;padding:30px;background:#fbfaf6;border:1.5px solid #171813;border-radius:18px;box-shadow:4px 4px 0 #17d96b}
+.experience-panel-primary{background:#17d96b}
+.experience-panel-kicker{font-size:9px;letter-spacing:.17em;color:#4a4c43}
+.experience-panel h3{font:700 clamp(25px,3vw,37px)/1.05 'Space Grotesk';letter-spacing:-.06em;margin:32px 0 10px;color:#11120f}
+.experience-role{font:600 13px 'DM Sans';color:#282922}
+.experience-role span{padding:0 5px;color:#087d40}
+.experience-panel p{max-width:500px;color:#484941;font-size:13px;line-height:1.7}
+.experience-panel small{display:block;margin-top:16px;color:#5b5d53;font-size:10px;line-height:1.5}
+.experience-muted{margin-top:18px;color:#77766d!important}
+.services-section{background:#f8f7f2;color:#11120f}
+.services-heading h2,.why-heading h2{color:#11120f}
+.services-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.service-card{min-height:280px;padding:24px 21px 22px;display:flex;flex-direction:column;border:1.5px solid #191a16;border-radius:18px;background:#fbfaf6;box-shadow:3px 3px 0 #17d96b;transition:transform .25s,box-shadow .25s}
+.service-card:hover{transform:translateY(-4px);box-shadow:5px 7px 0 #17d96b}
+.service-card>span,.why-grid article>span{font:600 11px 'Space Grotesk';color:#087d40}
+.service-card h3{font:700 clamp(20px,2.3vw,27px)/1.04 'Space Grotesk';letter-spacing:-.055em;margin:31px 0 12px;color:#11120f}
+.service-card p{font-size:12px;line-height:1.7;color:#65645d;margin:0 0 21px}
+.service-card small{margin-top:auto;font:600 8px 'DM Sans';letter-spacing:.12em;line-height:1.5;color:#858278}
+.why-section{background:#efeee7;color:#11120f}
+.why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.why-grid article{border-top:1px solid #cfcbbf;padding:20px 8px 0 0}
+.why-grid article h3{font:700 19px/1.15 'Space Grotesk';letter-spacing:-.04em;margin:28px 0 10px;color:#11120f}
+.why-grid article p{font-size:12px;line-height:1.75;color:#69685f;margin:0;max-width:270px}
+.about-instagram{display:inline-flex;align-items:center;gap:9px;margin-top:24px;padding:10px 15px;border:1px solid #171813;border-radius:999px;color:#171813;font-size:11px;font-weight:600;transition:background .2s}
+.about-instagram:hover{background:#17d96b}
+.about-process{margin-top:48px;padding-top:22px;border-top:1px solid #d6d2c7;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.about-process-label{grid-column:1/-1;font:600 9px 'DM Sans';letter-spacing:.17em;color:#77746b}
+.about-process>div{display:flex;flex-direction:column;gap:8px}
+.about-process>div>b{font:600 11px 'Space Grotesk';color:#087d40}
+.about-process strong{font:700 15px 'Space Grotesk';color:#11120f}
+.about-process small{font-size:11px;line-height:1.6;color:#77746b}
+.contact-intro{max-width:570px;color:#c9c9c0;font-size:15px;line-height:1.7;margin:24px 0 27px}
+.contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:90px}
+.contact-primary,.contact-secondary{min-height:50px;padding:0 19px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1.5px solid #22241e;border-radius:999px;background:#17d96b;color:#11120f;font:700 11px 'DM Sans';letter-spacing:.04em;transition:transform .2s,background .2s}
+.contact-secondary{background:transparent;border-color:#7b7b70;color:#f5f5f0}
+.contact-primary:hover,.contact-secondary:hover{transform:translateY(-2px);background:#bdf8d4;color:#11120f;border-color:#17d96b}
+.contact-modal-backdrop{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(12,13,11,.72);backdrop-filter:blur(7px)}
+.contact-modal{position:relative;width:min(100%,640px);max-height:calc(100svh - 40px);overflow:auto;padding:38px;background:#f8f7f2;color:#11120f;border:1.5px solid #171813;border-radius:24px;box-shadow:8px 8px 0 #17d96b}
+.contact-modal-close{position:absolute;top:17px;right:17px;width:38px;height:38px;display:grid;place-items:center;background:transparent;border:1px solid #d3d0c6;border-radius:50%;color:#11120f}
+.contact-modal .eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 20px}
+.contact-modal h2{font:700 clamp(34px,5.4vw,58px)/.94 'Space Grotesk';letter-spacing:-.075em;color:#11120f;margin:0}
+.contact-modal h2 em{font-style:normal;color:#087d40}
+.contact-modal-copy{max-width:460px;color:#67665d;font-size:13px;line-height:1.7;margin:19px 0 25px}
+.contact-modal-main{display:flex;align-items:center;gap:24px;padding:20px;background:#efeee7;border:1px solid #dedbd2;border-radius:17px}
+.contact-qr{width:188px;min-width:188px;display:grid;place-items:center;padding:10px;background:#fff;border:1px solid #dedbd2;border-radius:13px}
+.contact-modal-details{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.contact-modal-details>span{font:600 9px 'DM Sans';letter-spacing:.16em;color:#77746b}
+.contact-modal-details>strong{font:700 23px 'Space Grotesk';letter-spacing:-.04em}
+.contact-copy-number{display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:transparent;color:#087d40;font-size:11px;font-weight:700}
+.contact-modal-whatsapp{display:inline-flex;align-items:center;gap:9px;padding:12px 16px;margin-top:6px;border:1.5px solid #11120f;border-radius:999px;background:#17d96b;color:#11120f;font-size:11px;font-weight:700}
+.contact-modal-alternatives{display:flex;flex-wrap:wrap;gap:18px;margin-top:22px}
+.contact-modal-alternatives a{display:inline-flex;align-items:center;gap:7px;color:#33352f;font-size:11px;font-weight:600}
+.contact-modal-alternatives a:hover{color:#087d40}
+.contact-modal-note{margin:22px 0 0;padding-top:16px;border-top:1px solid #dedbd2;color:#77746b;font-size:10px;line-height:1.6}
+@media(max-width:1000px){.services-grid,.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-card{min-height:250px}}
+@media(max-width:850px){.experience-intro,.services-heading,.why-heading{display:block}.experience-intro>p,.services-heading>p,.why-heading>p{margin-top:17px}.experience-panels{grid-template-columns:1fr}.experience-panel{min-height:225px}}
+@media(max-width:600px){
+ .experience-section,.services-section,.why-section{padding-top:80px;padding-bottom:80px}
+ .experience-intro h2,.services-heading h2,.why-heading h2{font-size:44px}
+ .experience-panels{gap:14px}.experience-panel{padding:23px;min-height:0}.experience-panel h3{margin-top:26px}
+ .services-grid,.why-grid{grid-template-columns:1fr;gap:13px}.service-card{min-height:0;padding:22px}.service-card h3{margin-top:24px}
+ .why-grid{gap:24px}.why-grid article{padding-top:15px}.why-grid article h3{margin-top:15px}
+ .about-process{grid-template-columns:1fr;gap:18px}.about-process-label{grid-column:auto}
+ .contact-actions{align-items:stretch;flex-direction:column;margin-bottom:65px}.contact-actions a,.contact-actions button{width:100%;justify-content:center}
+ .contact-modal{padding:30px 21px 24px;border-radius:19px}.contact-modal-main{flex-direction:column;align-items:stretch}
+ .contact-qr{width:100%;min-width:0}.contact-modal-details{align-items:center;text-align:center}
+ .contact-modal-alternatives{justify-content:center;gap:13px 17px}.contact-modal-details>strong{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){.service-card,.contact-primary,.contact-secondary{transition:none}}
+/* Original Topmate artwork in a clean rounded card slider */
+.feedback-section{background:#efeee7;color:#11120f;overflow:hidden}
+.feedback-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.feedback-heading h2{font:700 clamp(42px,5.8vw,76px)/.94 'Space Grotesk';letter-spacing:-.075em;margin:0;color:#11120f}
+.feedback-heading h2 em{font-style:normal;color:#087d40}
+.feedback-heading>p{max-width:380px;margin:0 0 5px;color:#68675f;font-size:13px;line-height:1.75}
+.feedback-track{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;-ms-overflow-style:none;padding:8px 2px 18px;outline:none;touch-action:pan-x}
+.feedback-track::-webkit-scrollbar{display:none;width:0;height:0}
+.feedback-track:focus-visible{outline:2px solid #17d96b;outline-offset:4px}
+.feedback-set{display:flex;gap:22px;flex:0 0 auto;padding-right:22px}
+.feedback-slide{flex:0 0 clamp(250px,23vw,290px);min-width:0;scroll-snap-align:start}
+.feedback-art{width:100%;aspect-ratio:1080/1166;background-image:url('/feedback-sprite.webp');background-repeat:no-repeat;background-size:500% 200%;background-color:#f8f7f2;border:1.5px solid #171813;border-radius:18px;overflow:hidden;box-shadow:4px 4px 0 #17d96b,0 10px 30px rgba(23,20,14,.08);transition:transform .3s,box-shadow .3s}
+.feedback-slide:hover .feedback-art{transform:translateY(-4px);box-shadow:6px 8px 0 #17d96b,0 16px 35px rgba(23,20,14,.12)}
+@media(max-width:850px){.feedback-heading{display:block}.feedback-heading>p{margin-top:17px}.feedback-slide{flex-basis:clamp(250px,34vw,285px)}}
+@media(max-width:600px){.feedback-section{padding-top:76px;padding-bottom:76px}.feedback-heading{margin-bottom:28px}.feedback-heading h2{font-size:43px}.feedback-heading>p{font-size:12px}.feedback-set{gap:16px;padding-right:16px}.feedback-slide{flex-basis:min(78vw,280px)}.feedback-art{border-radius:16px;box-shadow:3px 3px 0 #17d96b,0 8px 22px rgba(23,20,14,.08)}}
+@media(prefers-reduced-motion:reduce){.feedback-track{scroll-behavior:auto}}
+
+/* Ensure the original Topmate artwork is visible (earlier text-card styling hid it). */
+.feedback-art{
+ display:block!important;width:100%;height:auto;aspect-ratio:1080/1166;
+ object-fit:contain;background:#fbfaf6;border:1.5px solid #171813;
+ border-radius:18px;overflow:hidden;
+ box-shadow:4px 4px 0 #17d96b,0 10px 30px rgba(23,20,14,.08);
+ transition:transform .3s,box-shadow .3s;
+}
+.feedback-slide:hover .feedback-art{transform:translateY(-4px);box-shadow:6px 8px 0 #17d96b,0 16px 35px rgba(23,20,14,.12)}
+@media(max-width:600px){.feedback-art{border-radius:16px;box-shadow:3px 3px 0 #17d96b,0 8px 22px rgba(23,20,14,.08)}}
