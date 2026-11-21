@@ -8,7 +8,9 @@ const feedback=[
  {person:'Anupam Singh',path:'/feedback/anupam-singh.webp',label:'Original Topmate feedback from Anupam Singh'},
  {person:'Anvay Dubey',path:'/feedback/anvay-dubey.webp',label:'Original Topmate feedback from Anvay Dubey'},
  {person:'Anonymous',path:'/feedback/anonymous-01.webp',label:'Original anonymous Topmate feedback'},
- {person:'Rohit Agarwal',path:'/feedback/rohit-agarwal.webp',label:'Original Topmate feedback from Rohit Agarwal'}
+ {person:'Rohit Agarwal',path:'/feedback/rohit-agarwal.webp',label:'Original Topmate feedback from Rohit Agarwal'},
+ {person:'Anonymous',path:'/feedback/anonymous-02.webp',label:'Original anonymous Topmate feedback'},
+ {person:'Gayatri Rout',path:'/feedback/gayatri-rout.webp',label:'Original Topmate feedback from Gayatri Rout'}
 ]
 
 export default function FeedbackCarousel(){
