@@ -32,7 +32,7 @@ export default function FeedbackCarousel(){
  },[paused])
 
  const renderCards=(copy:number)=><div className="feedback-set" key={copy} aria-hidden={copy===1}>
-  {feedback.map((item,index)=><article className="feedback-slide" key={item.path}>
+  {feedback.map(item=><article className="feedback-slide" key={item.path}>
    <img className="feedback-art" src={item.path} alt={copy===0?item.label:''} loading="lazy" decoding="async"/>
   </article>)}
  </div>
