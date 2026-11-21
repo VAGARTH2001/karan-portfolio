@@ -607,3 +607,91 @@ html,body,#root,body{background:#f8f7f2;color:#11120f}
  .feedback-track{gap:16px;margin-right:-7vw;padding-right:7vw}
  .feedback-person{font-size:12px}
 }
+
+
+/* Slim skills ticker, matching the reference strip below the hero */
+.skills-marquee{
+ width:100%;height:76px;display:flex;align-items:center;overflow:hidden;
+ background:#fff;border-block:1px solid #dedbd2;color:#11120f;
+}
+.skills-marquee-track{display:flex;width:max-content;will-change:transform;animation:skills-marquee-scroll 38s linear infinite}
+.skills-marquee-group{display:flex;align-items:center;gap:43px;flex:0 0 auto;padding-right:43px}
+.skills-marquee-item{display:inline-flex;align-items:center;gap:36px;white-space:nowrap;font:700 clamp(14px,1.55vw,21px)/1 'Space Grotesk';letter-spacing:-.045em;color:#151611}
+.skills-marquee-item i{font-style:normal;font-size:22px;font-weight:400;color:#087d40}
+@keyframes skills-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(hover:hover){.skills-marquee:hover .skills-marquee-track{animation-play-state:paused}}
+@media(max-width:600px){
+ .skills-marquee{height:62px}
+ .skills-marquee-group{gap:27px;padding-right:27px}
+ .skills-marquee-item{font-size:13px;gap:23px}
+ .skills-marquee-item i{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){.skills-marquee-track{animation:none}}
+
+/* Selected work remains a browsable gallery grid, not a carousel */
+.work-carousel{display:none}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+@media(max-width:600px){.project-grid{grid-template-columns:1fr;gap:20px}}
+
+/* Rounded client feedback cards with an automatic, scrollbar-free track */
+.feedback-section{background:#efeee7;color:#11120f;overflow:hidden}
+.feedback-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:36px}
+.feedback-heading h2{font:700 clamp(42px,5.8vw,76px)/.94 'Space Grotesk';letter-spacing:-.075em;margin:0;color:#11120f}
+.feedback-heading h2 em{font-style:normal;color:#087d40}
+.feedback-heading>p{max-width:350px;margin:0 0 5px;color:#68675f;font-size:13px;line-height:1.75}
+.feedback-track{
+ display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+ overscroll-behavior-x:contain;scrollbar-width:none;-ms-overflow-style:none;
+ padding:8px 2px 16px;outline:none;
+}
+.feedback-track::-webkit-scrollbar{display:none;width:0;height:0}
+.feedback-track:focus-visible{outline:2px solid #17d96b;outline-offset:4px}
+.feedback-set{display:flex;gap:22px;flex:0 0 auto;padding-right:22px}
+.feedback-slide{position:relative;flex:0 0 clamp(245px,23vw,290px);min-width:0;scroll-snap-align:start}
+.feedback-art{
+ width:100%;aspect-ratio:320/325;background-image:url('/feedback-sprite.webp');
+ background-repeat:no-repeat;background-size:500% 200%;background-color:#f8f7f2;
+ border:1.5px solid #171813;border-radius:18px;overflow:hidden;
+ box-shadow:4px 4px 0 #17d96b,0 10px 30px #17130c10;
+ transition:transform .3s,box-shadow .3s;
+}
+.feedback-slide:hover .feedback-art{transform:translateY(-4px);box-shadow:6px 8px 0 #17d96b,0 16px 35px #17130c18}
+.feedback-slide-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:13px 2px 0;color:#24231f;font:600 12px 'Space Grotesk'}
+.feedback-slide-caption i{font:500 8px 'DM Sans';letter-spacing:.14em;color:#8b867c;font-style:normal}
+@media(max-width:850px){
+ .feedback-heading{display:block}
+ .feedback-heading>p{margin-top:17px}
+ .feedback-slide{flex-basis:clamp(250px,34vw,285px)}
+}
+@media(max-width:600px){
+ .feedback-section{padding-top:76px;padding-bottom:76px}
+ .feedback-heading{margin-bottom:28px}
+ .feedback-heading h2{font-size:43px}
+ .feedback-heading>p{font-size:12px}
+ .feedback-set{gap:16px;padding-right:16px}
+ .feedback-slide{flex-basis:min(78vw,280px)}
+ .feedback-art{border-radius:16px;box-shadow:3px 3px 0 #17d96b,0 8px 22px #17130c10}
+ .feedback-slide-caption{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.feedback-track{scroll-behavior:auto}}
+
+
+/* Native feedback cards: readable, rounded and aligned with the green identity */
+.feedback-art{display:none}
+.feedback-slide{display:flex;flex-direction:column}
+.feedback-card{
+ position:relative;display:flex;flex:1;flex-direction:column;min-height:350px;
+ padding:25px 23px 20px;background:#fbfaf6;color:#171813;
+ border:1.5px solid #171813;border-radius:20px;
+ box-shadow:4px 4px 0 #17d96b,0 10px 28px rgba(23,20,14,.08);
+ transition:transform .28s,box-shadow .28s;
+}
+.feedback-slide:hover .feedback-card{transform:translateY(-4px);box-shadow:6px 8px 0 #17d96b,0 16px 32px rgba(23,20,14,.12)}
+.feedback-quote-mark{font:64px/.72 Georgia,serif;color:#17d96b;display:block;height:47px}
+.feedback-quote{font:400 16px/1.48 Georgia,'Times New Roman',serif;letter-spacing:-.012em;color:#22231f;margin:8px 0 22px}
+.feedback-card-footer{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-top:auto;padding-top:17px;border-top:1px solid #e1ded5}
+.feedback-card-footer strong{font:700 12px/1.25 'Space Grotesk';letter-spacing:.01em;color:#171813}
+.feedback-card-footer span{font:500 8px 'DM Sans';letter-spacing:.15em;color:#087d40;white-space:nowrap}
+.feedback-slide-caption{display:none}
+@media(max-width:850px){.feedback-card{min-height:340px;padding:23px 21px 18px}.feedback-quote{font-size:15px}}
+@media(max-width:600px){.feedback-card{min-height:330px;padding:22px 19px 18px;border-radius:17px}.feedback-quote{font-size:14px;line-height:1.5}.feedback-card-footer strong{font-size:11px}}
